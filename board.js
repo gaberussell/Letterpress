@@ -48,7 +48,7 @@ var Board = function(cells) {
                 // Set its position explicitly, so the other cells don't slide around if and when its moved to the tray
             	cell.html.style.left = String((index % 5) * (100/5)) + '%';
             	cell.html.style.top = String(Math.floor(index / 5) * (100/5)) + '%';
-                
+
                 // Add an event listener for when that cell is submitted to the tray
                 // We want it to dispatch an event to me
                 cell.html.addEventListener('cellSubmit', me);
@@ -98,5 +98,28 @@ Board.prototype.handleEvent = function(event) {
 
         // And then print the board's currentWord out to the console
         console.log("The current word is: ", "'", this.currentWord, "'");
+        isWord = checkWord(this.currentWord);
+
+        if (isWord) {
+          // change tray to green if word is in dictionary
+          document.querySelector('.word').style.backgroundColor = "rgba(46, 255, 49, 0.25)"
+        }
+        else {
+          // change tray to red
+          document.querySelector('.word').style.backgroundColor = "rgba(255, 67, 46, 0.25)"
+        }
     }
 };
+
+function checkWord(currentWord) {
+  // convert the current word to lowercase, because our dictionary is lowercase
+  currentWord = currentWord.toLowerCase();
+
+  // iterate over each word in the dictionary and compare it to the current word
+  for (var word in letterpressDictionary) {
+    if (letterpressDictionary[word] == currentWord) {
+      return true;
+    }
+  }
+  return false;
+}

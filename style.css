@@ -20,7 +20,7 @@ body {
     top: 50%;
     transform: translateY(-36%);
     /*Center the board vertically*/
-    
+
     margin-left: auto;
     margin-right: auto;
     /*Center the board horizontally*/
@@ -32,7 +32,7 @@ body {
     position: absolute;
     top: calc(-36% - 2.125em - (100% - 36% - 2.125em)/6);
     /* Center the .word above the board */
-    
+
     background-color: rgba(255, 67, 46, 0.25);
 }
 @font-face {
@@ -44,7 +44,7 @@ body {
     font-family: "Museo Sans Rounded", sans-serif;
     text-transform: uppercase;
     /* Make all our letters uppercase */
-    
+
     font-size: 3em;
     line-height: 2.125em;
 }
@@ -53,7 +53,7 @@ body {
     width: calc(100%/5);
     height: calc(100%/5);
     /* Set the width and height of cells for a 5x5 board */
-    
+
     display: inline-block;
     /* We want the divs to sit alongside one another */
 }
@@ -67,7 +67,7 @@ body {
 .board .cell:nth-child(even) {
     background-color: rgba(240, 239, 236, 0.5);
     /*
-	Style cells which are the even-numbered children of .board 
+	Style cells which are the even-numbered children of .board
 	You can read more at https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
 	and https://css-tricks.com/almanac/selectors/n/nth-child/
 	*/
